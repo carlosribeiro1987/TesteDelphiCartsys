@@ -1,0 +1,15 @@
+# Delphi build
+*.dcu
+*.exe
+
+# Delphi local/temporary
+*.dproj.local
+*.identcache
+*.stat
+*.~*
+__history/
+__recovery/
+
+# Build directories
+Win32/
+Win64/
