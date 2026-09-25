@@ -7,9 +7,14 @@
 *.identcache
 *.stat
 *.~*
+*.dsk
+*.dsv
 __history/
 __recovery/
 
 # Build directories
 Win32/
 Win64/
+
+# Firebird runtime
+Executável/firebird.log

@@ -103,6 +103,8 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -125,6 +127,48 @@
         </DelphiCompile>
         <DCCReference Include="View\LoginView.pas">
             <Form>frmLogin</Form>
+        </DCCReference>
+        <DCCReference Include="Data\DatabaseDataModule.pas">
+            <Form>dmDatabase</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Model\UsuarioModel.pas"/>
+        <DCCReference Include="Data\Repository\UsuarioRepository.pas"/>
+        <DCCReference Include="Lib\Bcrypt.pas"/>
+        <DCCReference Include="Service\PasswordService.pas"/>
+        <DCCReference Include="Service\UsuarioService.pas"/>
+        <DCCReference Include="Service\TotpService.pas"/>
+        <DCCReference Include="Lib\GoogleOTP.pas"/>
+        <DCCReference Include="Lib\Base32U.pas"/>
+        <DCCReference Include="Controller\LoginController.pas"/>
+        <DCCReference Include="Lib\DelphiZXIngQRCode.pas"/>
+        <DCCReference Include="View\AuthenticatorView.pas">
+            <Form>frmAuthenticator</Form>
+        </DCCReference>
+        <DCCReference Include="Data\Seed\DatabaseSeed.pas"/>
+        <DCCReference Include="View\MainView.pas">
+            <Form>frmMain</Form>
+        </DCCReference>
+        <DCCReference Include="Model\ClienteModel.pas"/>
+        <DCCReference Include="Data\Repository\ClienteRepository.pas"/>
+        <DCCReference Include="Service\ClienteService.pas"/>
+        <DCCReference Include="Controller\ClienteController.pas"/>
+        <DCCReference Include="View\ClienteView.pas">
+            <Form>frmCliente</Form>
+        </DCCReference>
+        <DCCReference Include="View\ClienteCadastroView.pas">
+            <Form>frmClientreCadastro</Form>
+        </DCCReference>
+        <DCCReference Include="Model\EnderecoModel.pas"/>
+        <DCCReference Include="Service\ViaCepService.pas"/>
+        <DCCReference Include="Data\Repository\CidadeRepository.pas"/>
+        <DCCReference Include="Controller\UsuarioController.pas"/>
+        <DCCReference Include="View\UsuarioBloqueioView.pas">
+            <Form>frmUsuarioBloqueio</Form>
+        </DCCReference>
+        <DCCReference Include="Service\AuthorizationService.pas"/>
+        <DCCReference Include="View\ClienteRelatorioView.pas">
+            <Form>frmClienteRelatorio</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
@@ -147,6 +191,10 @@
                 <Source>
                     <Source Name="MainSource">TesteDelphiCartsys.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k370.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp370.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="5">
                 <DeployFile LocalName="Win32\Debug\TesteDelphiCartsys.exe" Configuration="Debug" Class="ProjectOutput">
